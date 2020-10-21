@@ -19,6 +19,6 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: sshpass -e rsync -r --delete-after --quiet site root@123.206.119.125:~/subuqery/mkdocs
+  script: sshpass -e rsync -r --delete-after --quiet site root@123.206.119.125:~/subquery/mkdocs
   on:
     branch: master
