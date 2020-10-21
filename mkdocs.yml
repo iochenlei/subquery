@@ -1,7 +1,7 @@
-site_name: Subquery
+site_name: 沙丘教程
 site_url: http://www.subquery.cn
-site_author: SubQuery
-site_description: SubQuery是一家提供编程教程的网站。
+site_author: Subquery
+site_description: 沙丘教程(www.subquery.cn)提供了编程的基础技术教程。
 strict: true
 
 copyright: Copyright &copy; 2020 www.subquery.cn
