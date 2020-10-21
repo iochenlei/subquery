@@ -1,19 +1,25 @@
 import os
-from datetime import datetime
+from mkdocs_git_revision_date_localized_plugin.util import Util
 
 
 def define_env(env):
     @env.macro
     def newest_posts():
         results = []
+        util = Util(env.variables.config)
         for page in env.variables.navigation.pages:
             if not page.url:
                 continue
-            filename = os.path.join(env.variables.config['docs_dir'],
-                                    page.url[:len(page.url) - 1] + '.md')
-            results.append((os.stat(filename).st_mtime, page))
+            revision_dates = util.get_revision_date_for_file(
+                path=page.file.abs_src_path,
+                locale='zh',
+                time_zone='Asia/Shanghai',
+                fallback_to_build_date=True,
+            )
+            revision_date = revision_dates['date']
+            results.append((revision_date, page))
         results = sorted(results, key=lambda x: x[0], reverse=True)
         output = []
-        for modify_time, page in results[:50]:
-            output.append('+ ' + datetime.fromtimestamp(modify_time).strftime('%Y-%m-%d %H:%M:%S') + ' - <a href=" + page.abs_url + ">' + page.title + '</a>')
+        for revision_date, page in results[:50]:
+            output.append('+ ' + revision_date + ' - <a href=" + page.abs_url + ">' + page.title + '</a>')
         return "\n".join(output)
