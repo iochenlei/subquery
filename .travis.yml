@@ -1,0 +1,24 @@
+language: python
+cache:
+  pip: true
+python:
+  - 3.6
+install:
+  - pip install -r requirements.txt
+addons:
+  ssh_known_hosts:
+  - 123.206.119.125
+  apt:
+    packages:
+    - sshpass
+branches:
+  only:
+    - master # build master branch only
+script:
+  - mkdocs build # generate static files
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: sshpass -e rsync -r --delete-after --quiet site root@123.206.119.125:~/subuqery/mkdocs
+  on:
+    branch: master
