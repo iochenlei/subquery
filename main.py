@@ -21,5 +21,5 @@ def define_env(env):
         results = sorted(results, key=lambda x: x[0], reverse=True)
         output = []
         for revision_date, page in results[:50]:
-            output.append('+ ' + revision_date + ' - <a href=" + page.abs_url + ">' + page.title + '</a>')
+            output.append('+ ' + revision_date + ' - <a href="%s">%s</a>' % (page.abs_url, page.title))
         return "\n".join(output)
