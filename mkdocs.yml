@@ -26,6 +26,9 @@ plugins:
 
 nav:
   - 主页: index.md
+  - Linux教程:
+    - 常用命令:
+      - Linux sed 命令: linux-cli/sed.md
 
 markdown_extensions:
   - admonition
