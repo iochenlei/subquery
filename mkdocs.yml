@@ -1,0 +1,68 @@
+site_name: Subquery
+site_url: http://www.subquery.cn
+site_author: SubQuery
+site_description: SubQuery是一家提供编程教程的网站。
+strict: true
+
+copyright: Copyright &copy; 2020 www.subquery.cn
+
+repo_name: iochenlei/Subquery
+repo_url: http://github.com/iochenlei/Subquery
+
+theme:
+  language: zh
+  name: material
+  palette:
+    primary: blue
+  include_search_page: false
+  search_index_only: true
+  features:
+    - navigation.tabs
+
+plugins:
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+  - macros
+
+nav:
+  - 主页: index.md
+
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
