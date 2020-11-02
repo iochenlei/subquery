@@ -6,8 +6,8 @@ strict: false
 
 copyright: Copyright &copy; 2020 www.subquery.cn
 
-repo_name: iochenlei/Subquery
-repo_url: http://github.com/iochenlei/Subquery
+repo_name: iochenlei/subquery
+repo_url: http://github.com/iochenlei/subquery
 
 theme:
   language: zh
@@ -56,8 +56,8 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.magiclink:
       repo_url_shorthand: true
-      user: squidfunk
-      repo: mkdocs-material
+      user: iochenlei
+      repo: subquery
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.snippets:
