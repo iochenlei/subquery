@@ -11,15 +11,15 @@ night
 yes
 ```
 
-下面来看一下如何使用sed命令把单词`night`替换为`day`。
+下面来看一下如何使用`sed`命令把单词`night`替换为`day`。
 
-很简单，我们使用下面的命令即可实现：
+很简单，我们在终端中运行下面的命令即可实现：
 
 ```text
 sed s/night/day/ < old.txt > new.txt
 ```
 
-最后我们使用`cat new.txt`命令来查看一下`new.txt`文件中的内容：
+最后我们运行`cat new.txt`命令来查看一下`new.txt`文件中的内容：
 
 ```text
 me
